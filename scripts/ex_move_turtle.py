@@ -22,6 +22,4 @@ if __name__== '__main__':
         pass
 
 # rosrun turtlesim turtlesim_node
-# rosrun rosrun live_code move_turtle.py
-
-# cp -r catkin_ws/src/ /media/psf/Home/Documents/live_code/copyx/
+# rosrun live_code move_turtle.py

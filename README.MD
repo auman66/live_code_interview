@@ -1,3 +1,7 @@
+This is a repo with a live coding demo of ROS using the turtlesim and turtlebot gazebo simulation.
+
+The live coding will take place in the `move.py` file. The `ex_move_bot.py` and `ex_move_turtle.py` files are completed examples.
+
 # Prerequisites
 
 - [ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)
@@ -8,7 +12,7 @@
 
 # Set Up
 
-1. Grab turlebot sim:
+1. Install turlebot sim:
 ```
 $ cd ~/catkin_ws/source
 $ git clone -b noetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
@@ -34,34 +38,36 @@ catkin_install_python(PROGRAMS
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 ```
-6. Build
+7. Build
 ```
 $ cd ~/catkin_ws
 $ catkin build
 ```
 
-7. Source
+8. Source
 ```
 $ source devel/setup.bash
 ```
 **Note:** Adding `source ~/catkin_ws/devel/setup.bash` to your `~/.bashrc` file is a good shortcut for this
 
 # Running the system
+
+Make sure `roscore` is running
+
 ## Running turtlesim
 ```
 $ rosrun turtlesim turtlesim_node
-$ rosrun rosrun live_code move_bot.py
+$ rosrun live_code ex_move_turtle.py
 ```
 
 ## Running turtlebot simulation
 ```
 $ export TURTLEBOT3_MODEL=burger
 $ roslaunch turtlebot3_gazebo turtlebot3_house.launch
-$ rosrun live_code move_bot.py
+$ rosrun live_code ex_move_bot.py
 ```
+**Note**: `export TURTLEBOT3_MODEL=burger` can be added to the `~/.bashrc` file 
 
-**Note:** Don't forget to run `roscore` first
-
-Helpful Sources:
+# Sources:
 - [ROS Tutorials](http://wiki.ros.org/ROS/Tutorials)
 - [Turltebot 3 simulation setup](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/#gazebo-simulation)
